@@ -71,6 +71,13 @@ const MainPage = ({ MainMenu }) => {
     function bookings(){
             
     }
+    //function to book
+    function Book(){
+         const name = "kenneth"
+         const Amount = 200
+
+         console.log(name, Amount)
+    }
    
     console.log('from Data-1: ', data);
     console.log('From Hotel-1', hotel);
@@ -78,9 +85,11 @@ const MainPage = ({ MainMenu }) => {
     
 
     let navigate = useNavigate();
+
+    
     const nav = (()=>{
         navigate('../book');
-        console.log('im working');
+        console.log('we on the booking page');
     })
     return (
         <>

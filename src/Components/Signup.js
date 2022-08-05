@@ -11,7 +11,7 @@ function Signup() {
    const [surname, setSurname] = useState("")
    const [email, setEmail] = useState("")
    const [password, setPassword] = useState("")
-
+   const navigate = useNavigate()
 
 
     const register = () => {
@@ -28,7 +28,7 @@ function Signup() {
 
     }
     addDoc(userRef,user).then(()=>{
-      console.log("details added")
+      navigate('/main')
     }).catch((error)=>{
       console.log("not added")
     })
@@ -47,7 +47,6 @@ function Signup() {
     }
 
 
-    const navigate = useNavigate()
       
 
     return (
