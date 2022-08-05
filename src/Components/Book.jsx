@@ -36,17 +36,17 @@ function Book () {
 
     const hotels = collection(db,"bookings")
     const user = {
-        
-        password:password
-,        name: name,
-        surname: surname,
-        email: email,
-        room: room,
-        amount: amount,
-        numbers: numbers,
-        date: date,
-        time: time,
-        date2: time,
+         booo
+//         password:password
+// ,        name: name,
+//         surname: surname,
+//         email: email,
+//         room: room,
+//         amount: amount,
+//         numbers: numbers,
+//         date: date,
+//         time: time,
+//         date2: time,
 
     }
     addDoc(hotels,user).then(()=>{
