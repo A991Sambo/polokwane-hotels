@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;1,300&family=Lato:ital,wght@0,300;0,400;1,100;1,300&family=Oswald:wght@300;400;500;600&family=Roboto:wght@100;300;400;700&family=Source+Sans+Pro:wght@200;300&display=swap');
+
 body{
     background-image: url('../Images/blue.webp');
     background-size: cover;
     overflow: hidden;
     color: rgb(0, 0, 0);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+
    
 }
+
 .pre {
     
     display: flex;
@@ -104,7 +108,8 @@ body{
     height: 100vh;
     justify-content: center;
     background-size: cover;
-    background-image: url('../Images/home-background.PNG');
+    /* background-image: url('../Images/home-background.PNG'); */
+    background-image: url('../Images/blue.webp');
 
 }
 
@@ -117,7 +122,8 @@ body{
     align-items: center;
     height: 100vh;
     justify-content: center;
-    background-image: url('../Images/home-background.PNG');
+    /* background-image: url('../Images/home-background.PNG'); */
+    background-image: url('../Images/blue.webp');
 }
 
 
@@ -211,6 +217,7 @@ body{
 
 .full-book-page{
 
+
     background-size: cover;
     align-self: center;
     display: flex;
@@ -218,8 +225,8 @@ body{
     align-items: center;
     height: 100vh;
     justify-content: center;
-    background-image: url('../Images/home-background.PNG');
-    
+    /* background-image: url('../Images/home-background.PNG');
+     */
 }
 
 .book-form input{
@@ -302,7 +309,8 @@ img{
     position: absolute;
     left: 520px;
     top: 10px;
-    background-color:  #6a7b8b;  
+    background-color: #6a7b8b
+    ;  
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     padding-left: 30px;
 
@@ -320,7 +328,7 @@ h4{
 }
 
 a{
-
+    
     align-items: center;
     text-decoration: none;
     color: #000;
@@ -330,10 +338,19 @@ a{
 
 
 .moreInfo{
-
+    border-radius: 5px;
+    border: 2px solid white;
+    left: 10px;
+    width: 90px;
+    height: 18px;
+    color: black;
+    /* color: rgb(196, 181, 181); */
     cursor: pointer;
+    background-color: darkseagreen;
+
 
 }
+
 .hotel-rooms{
     display: flex;
     width: 500px;

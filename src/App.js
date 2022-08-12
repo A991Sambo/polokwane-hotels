@@ -18,7 +18,7 @@ export const App = () => {
       <Route element={<Sigin/>}  path="signin"/>
       <Route element={<MainPage/>}  path="main"/>
       <Route element={<Book/>}  path="book"/>
-      <Route element={<NavBar/>} path="Navbar"/>
+      {/* <Route element={<NavBar/>} path="Navbar"/> */}
     </Routes>
     
     </BrowserRouter>

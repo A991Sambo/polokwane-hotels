@@ -34,11 +34,11 @@ function Book () {
     const userD = userCredential.user; 
     console.log("booked")
 
-    const hotels = collection(db,"bookings")
+    const hotels = collection(db,"users")
     const user = {
-         booo
+         
 //         password:password
-// ,        name: name,
+// ,       name: name,
 //         surname: surname,
 //         email: email,
 //         room: room,
