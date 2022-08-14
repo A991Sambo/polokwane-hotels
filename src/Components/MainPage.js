@@ -4,11 +4,11 @@ import {useNavigate} from 'react-router-dom'
 import { db } from "./firebase"
 import { Link} from "react-router-dom";
 import NavBar from './NavBar';
+import Contact from './Contact';
 
 
 const MainPage = ({ MainMenu }) => {
 
- 
 
     const hotels = [
         {
@@ -96,6 +96,7 @@ const MainPage = ({ MainMenu }) => {
     })
     return (
         <>
+        <NavBar/>
             {
                 hotels.map((hotel, index) => (
                     <div className='backr' key={index}>
@@ -114,7 +115,7 @@ const MainPage = ({ MainMenu }) => {
                         </div>
 
                         <h4 className="moreInfo" onClick={(e) => { getInfo(index) }}>More info. {hotels.Moreinfo}</h4>
-                    
+           
 
                     </div>
 
@@ -126,8 +127,10 @@ const MainPage = ({ MainMenu }) => {
             <div className='heading'>
               
                 <h1>HOTEL DESCRIPTION.</h1>
+
             
             </div>
+            <Contact/>
             {/* <p>click on Moreinfo to display hotel full info</p>  */}
             {data.length === 0 ? (<>
           

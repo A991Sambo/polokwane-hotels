@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;1,300&family=Lato:ital,wght@0,300;0,400;1,100;1,300&family=Oswald:wght@300;400;500;600&family=Roboto:wght@100;300;400;700&family=Source+Sans+Pro:wght@200;300&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;1,300&family=Lato:ital,wght@0,300;0,400;1,100;1,300&family=Oswald:wght@300;400;500;600&family=Roboto:wght@100;300;400;700&family=Source+Sans+Pro:wght@200;300&display=swap');
 
 body{
     background-image: url('../Images/blue.webp');
@@ -197,7 +197,7 @@ body{
 .btnlog{
     margin-left: 50px;
     margin-top: 20px;
-    
+   
 
 }
 
@@ -359,5 +359,25 @@ a{
     margin-left: -50px;
 }
 .nav{
-    background-color: rgb(192, 25, 25);
+    display: flex; 
+    justify-content: space-between;  
+   
+
+}
+.Contact{
+    margin-left: 1600px;
+    font-size: larger;
+    
+
+}
+.About{
+    margin-right: 120px;
+    font-size: larger;
+}
+a:link{
+    color: red;
+}
+.link2{
+    margin-left: -24%;
+    color: forestgreen;
 }

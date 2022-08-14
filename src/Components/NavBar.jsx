@@ -1,32 +1,26 @@
-// import React, { Component } from 'react'
-// import {useNavigate} from 'react-router-dom'
+import React, { Component } from 'react'
+import {useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import Contact from './Contact'
+import { About } from './About'
 
+function NavBar ()  {
 
-// function NavBar ()  {
-
-//   const navigate =useNavigate()
-//   return (
+  const navigate =useNavigate()
+  return (
     
-//         <div className='nav'>
-//                     <div className='About'>About</div>
-//                     <div className='Contact'>Contact</div>
-//                     <div className='User history'>User history</div>
-//                     <div className='User profile'>User Profile</div>
-//                     <div className='Cancel bookings'>Cancel Bookings</div>
-
-
-   
-//             <div className="sign-btn"> 
-//                   <button onClick={()=>{
-//                   navigate("/main")
-//                  }} className='Signup-but'>Submit</button>
-//             </div>
-
-
-//                 </div>
+        <div className='nav'>
+                    
+                    <Link className='Contact' to="/Contact">Contact</Link>
+                    <br>
+                    </br>
+                    <Link className='About' to="/About">About</Link>
+                    
+                </div>
 
   
-//   )
-// }
+  )
+}
 
-// export default NavBar;
+export default NavBar;
+
