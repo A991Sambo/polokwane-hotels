@@ -1,11 +1,10 @@
 // import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom'
 import React, { Component, useState } from 'react'
+import { addDoc, collection } from "firebase/firestore"
+import { db } from "./firebase"
 import {  createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase"
-import { db } from "./firebase"
-import { addDoc, collection } from "firebase/firestore"
-
 
 
 
@@ -21,59 +20,47 @@ function Book () {
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
   const [date2, setDate2] = useState("")
-  const [time2, setTime2] = useState("")
   const [password, setPassword] = useState("")
- 
+
+  const [time2, setTime2] = useState("")
   const navigate = useNavigate()
 
- const Book = () => {
+  const bookings = () => {
+    createUserWithEmailAndPassword(auth, email,password)
 
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const userD = userCredential.user; 
-    console.log("booked")
+.then((userCredential) => {
+  // Signed in 
+  const userD = userCredential.user; 
+  console.log("booked")
 
-    const hotels = collection(db,"users")
-    const user = {
-         
-//         password:password
-// ,       name: name,
-//         surname: surname,
-//         email: email,
-//         room: room,
-//         amount: amount,
-//         numbers: numbers,
-//         date: date,
-//         time: time,
-//         date2: time,
+  const userRef = collection(db,"hotels")
+  const user = {
+      name: name,
+      surname: surname,
 
-    }
-    addDoc(hotels,user).then(()=>{
-      navigate('/main')
-    }).catch((error)=>{
-      console.log("not booked")
-    })
-
-    // ...
+  }
+  addDoc(userRef,user).then(()=>{
+    navigate('/main')
+  }).catch((error)=>{
+    console.log("not added")
   })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(error)
 
-    // ..
-  });
+  // ...
+})
+.catch((error) => {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  console.log(error)
 
-      
-    }
+  // ..
+});
 
-
+    // await setDoc(doc(db, "data", "one"), Book);
 
 
   // console.log ("Book")
 
-
+  }
 
   return (
 
@@ -81,7 +68,7 @@ function Book () {
 
       <h1>Book Hotel.</h1>
       <div className='book-form'>
-        <input  type="text" placeholder='Name'onChange={(e)=>{setName(e.target.value)}}/>
+        <input  type="text"  name="name "   placeholder='Name'onChange={(e)=>{setName(e.target.value)}}/>
         <br>
         </br>
         <input type="text" placeholder='Surname'onChange={(e)=>{setSurname(e.target.value)}} />
@@ -113,9 +100,7 @@ function Book () {
       </div>
 
       <div className="sign-out-div">  
-          <button onClick={()=>{
-                  navigate('/main')
-          }} className='Signup-but2'>Submit</button>
+      <button onClick={(e)=>{bookings()}} className='Signup-but'>Submit</button>
       </div>
 
     </div>
@@ -124,4 +109,4 @@ function Book () {
 }
 
 
-export default Book;
+export default Book

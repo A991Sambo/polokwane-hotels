@@ -68,7 +68,8 @@ function Login() {
 
         </div>
         <div className='link'>
-          <Link className='link2' to="/signin">signup...</Link>
+       
+          <Link className='link2' to="/signin">Click here to create account</Link>
 
         </div>
 

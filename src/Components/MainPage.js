@@ -1,15 +1,16 @@
 import '../Components/css/main.css'
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom'
+import { db } from "./firebase"
 import { Link} from "react-router-dom";
 import NavBar from './NavBar';
 
 
 const MainPage = ({ MainMenu }) => {
 
+ 
 
-
-    const hotel = [
+    const hotels = [
         {
 
             Name: 'RIVER DAM HOTEL ',
@@ -64,9 +65,11 @@ const MainPage = ({ MainMenu }) => {
 
     function getInfo(und) {
         console.log('i am clicked okay ', und);
-        setData(hotel[und])
+        setData(hotels[und])
         
     }
+
+    
 
     function bookings(){
             
@@ -80,7 +83,7 @@ const MainPage = ({ MainMenu }) => {
     }
    
     console.log('from Data-1: ', data);
-    console.log('From Hotel-1', hotel);
+    console.log('From Hotel-1', hotels);
     console.log(MainMenu)
     
 
@@ -94,23 +97,23 @@ const MainPage = ({ MainMenu }) => {
     return (
         <>
             {
-                hotel.map((user, index) => (
+                hotels.map((hotel, index) => (
                     <div className='backr' key={index}>
 
                         <div className='hot-name'>
-                            <h4> HOTEL NAME : {user.Name}</h4>
+                            <h4> HOTEL NAME : {hotel.Name}</h4>
                         </div>
                         <div className='loc'>
-                            <h4> LOCATION : {user.Location}</h4>
+                            <h4> LOCATION : {hotel.Location}</h4>
                         </div>
 
                      
                         <div className='image-ig'>
-                            <img className='sidepic' src={user.pic}></img>
+                            <img className='sidepic' src={hotel.pic}></img>
                            
                         </div>
 
-                        <h4 className="moreInfo" onClick={(e) => { getInfo(index) }}>More info. {user.Moreinfo}</h4>
+                        <h4 className="moreInfo" onClick={(e) => { getInfo(index) }}>More info. {hotels.Moreinfo}</h4>
                     
 
                     </div>
