@@ -3,7 +3,7 @@
 body{
     background-image: url('../Images/blue.webp');
     background-size: cover;
-    overflow: hidden;
+  overflow: hidden;
     color: rgb(0, 0, 0);
     /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 
@@ -367,17 +367,78 @@ a{
 .Contact{
     margin-left: 1600px;
     font-size: larger;
-    
-
+    padding-top: 10px;
+    color: rgb(221, 140, 33);
+    font-size: x-large;
 }
 .About{
+    padding-top: 10px;
     margin-right: 120px;
     font-size: larger;
+    color: rgb(221, 140, 33);
+    font-size: x-large;
 }
 a:link{
-    color: red;
+    color: forestgreen;
 }
 .link2{
+  
     margin-left: -24%;
     color: forestgreen;
+}
+.cons{
+    margin-top: 200px;
+    justify-content: center;
+    margin-left: 250px;
+    display: flex;
+    font-size: xx-large;
+    
+}
+.about-hotel{
+    justify-content: center;
+}
+.cons2{
+    margin-top: 200px;
+    justify-content: center;
+    margin-left: 250px;
+    display: flex;
+    font-size: xx-large;
+    
+}
+.conts2{
+    
+    align-items: flex-start;
+    width: 400px;
+    padding-bottom: px;
+    border: 2px solid black;
+    border-radius: 20px;
+    justify-content: center;
+    align-content: center;
+    height: 30px;
+    padding-left: 10px;
+    margin-top: 10px;
+    
+}
+.cont-for input{
+    
+    align-items: flex-start;
+    width: 400px;
+    padding-bottom: px;
+    border: 2px solid black;
+    border-radius: 20px;
+    justify-content: center;
+    align-content: center;
+    height: 30px;
+    padding-left: 10px;
+    margin-top: 10px;
+   
+}
+.cont-form{
+    margin-top: 180px;
+    margin-right: 100px;
+    margin-left: -145px ;
+}
+.message{
+    width: 20px;
+    color: aqua;
 }

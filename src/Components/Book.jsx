@@ -1,19 +1,20 @@
 // import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom'
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import { addDoc, collection } from "firebase/firestore"
 import { db } from "./firebase"
-import {  createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./firebase"
+
+
+
 
 
 
 
 //function
 function Book () {
-  const [name, setName] = useState("")
-  const [surname, setSurname] = useState("")
-  const [email, setemail] = useState("")
+  // const [name, setName] = useState("")
+  // const [surname, setSurname] = useState("")
+  // const [email, setemail] = useState("")
   const [room, setRoom] = useState("")
   const [amount, setAmount] = useState("")
   const [numbers, setNumbers] = useState("")
@@ -25,42 +26,30 @@ function Book () {
   const [time2, setTime2] = useState("")
   const navigate = useNavigate()
 
-  const bookings = () => {
-    createUserWithEmailAndPassword(auth, email,password)
+ 
 
-.then((userCredential) => {
-  // Signed in 
-  const userD = userCredential.user; 
-  console.log("booked")
-
-  const userRef = collection(db,"hotels")
-  const user = {
-      name: name,
-      surname: surname,
+  const hotelsRef = collection(db,"hotels")
+  const hotels = {
+      // name: name,
+      // surname: surname,
+      room:room,
+      amount:amount,
+      numbers:numbers,
+      date:date,
+      time:time,
+      date2:date2,
+      time:time2,
 
   }
-  addDoc(userRef,user).then(()=>{
+
+  const  booking = async()=>{
+  addDoc(hotelsRef,hotels).then(()=>{
     navigate('/main')
-  }).catch((error)=>{
-    console.log("not added")
+  }).then(()=>{
+    alert('booked')
   })
 
-  // ...
-})
-.catch((error) => {
-  const errorCode = error.code;
-  const errorMessage = error.message;
-  console.log(error)
-
-  // ..
-});
-
-    // await setDoc(doc(db, "data", "one"), Book);
-
-
-  // console.log ("Book")
-
-  }
+}
 
   return (
 
@@ -68,16 +57,16 @@ function Book () {
 
       <h1>Book Hotel.</h1>
       <div className='book-form'>
-        <input  type="text"  name="name "   placeholder='Name'onChange={(e)=>{setName(e.target.value)}}/>
+        {/* <input  type="text"  name="name "   placeholder='Name'onChange={(e)=>{setName(e.target.value)}}/> */}
         <br>
         </br>
-        <input type="text" placeholder='Surname'onChange={(e)=>{setSurname(e.target.value)}} />
+        {/* <input type="text" placeholder='Surname'onChange={(e)=>{setSurname(e.target.value)}} /> */}
         <br>
         </br>
-        <input type="email" placeholder='Email Address' onChange ={(e)=>{ setemail(e.target.value)}} />
+        {/* <input type="email" placeholder='Email Address' onChange ={(e)=>{ setemail(e.target.value)}} /> */}
         <br>
         </br>
-        <input type="Room" placeholder='Room Type' onChange={(e)=>{setRoom(e.target.value)}} />
+        {/* <input type="Room" placeholder='Room Type' onChange={(e)=>{setRoom(e.target.value)}} /> */}
         <br></br>
         <input  type="Amount" placeholder='Enter Amount' onChange={(e)=>{setAmount(e.target.value)}} />
         <br>
@@ -100,7 +89,7 @@ function Book () {
       </div>
 
       <div className="sign-out-div">  
-      <button onClick={(e)=>{bookings()}} className='Signup-but'>Submit</button>
+      <button onClick={booking} className='Signup-but'>Submit</button>
       </div>
 
     </div>
