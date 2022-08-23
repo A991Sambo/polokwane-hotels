@@ -60,7 +60,13 @@ export const About = () => {
               quasi aliquam eligendi, placeat qui corporis!
 
         </p>
+         
+            <div className='thanks'>
+              <h2>Thank you</h2>
+            </div>
+
       </div>
+
         
     </div>
 

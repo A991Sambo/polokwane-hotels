@@ -57,7 +57,9 @@ function Login() {
 
         <br>
         </br>
+
         <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+
         <br>
         </br>
 
@@ -68,7 +70,7 @@ function Login() {
 
         </div>
         <div className='link'>
-       
+
           <Link className='link2' to="/signin">Click here to create account</Link>
 
         </div>

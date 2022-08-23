@@ -69,10 +69,10 @@ function Signup() {
               <input type="password" placeholder='Password'  onChange ={(e)=>setPassword(e.target.value)} />
                 <br>
                 </br>
-
+                <button onClick={(e)=>{register()}} className='Signup-but'>Submit</button>
                               
               <div className="sign-btn"> 
-              <button onClick={(e)=>{register()}} className='Signup-but'>Submit</button>
+              
               </div>
             </div>
       </div>

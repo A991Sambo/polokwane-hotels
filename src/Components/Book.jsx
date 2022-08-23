@@ -1,4 +1,4 @@
-// import React, { useState } from 'react';
+
 import {useNavigate} from 'react-router-dom'
 import React, { useState } from 'react'
 import { addDoc, collection } from "firebase/firestore"
@@ -12,33 +12,31 @@ import { db } from "./firebase"
 
 //function
 function Book () {
-  // const [name, setName] = useState("")
-  // const [surname, setSurname] = useState("")
-  // const [email, setemail] = useState("")
-  const [room, setRoom] = useState("")
+  const [name, setName] = useState("")
+  const [surname, setSurname] = useState("")
   const [amount, setAmount] = useState("")
   const [numbers, setNumbers] = useState("")
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
   const [date2, setDate2] = useState("")
   const [password, setPassword] = useState("")
-
   const [time2, setTime2] = useState("")
+  const[ HotelName, setHotelName]= useState ("")
   const navigate = useNavigate()
 
  
 
   const hotelsRef = collection(db,"hotels")
   const hotels = {
-      // name: name,
-      // surname: surname,
-      room:room,
+      name: name,
+      surname: surname,
       amount:amount,
       numbers:numbers,
       date:date,
       time:time,
       date2:date2,
       time:time2,
+      HotelName:HotelName
 
   }
 
@@ -46,7 +44,7 @@ function Book () {
   addDoc(hotelsRef,hotels).then(()=>{
     navigate('/main')
   }).then(()=>{
-    alert('booked')
+    alert('Successfully Booked')
   })
 
 }
@@ -57,21 +55,23 @@ function Book () {
 
       <h1>Book Hotel.</h1>
       <div className='book-form'>
-        {/* <input  type="text"  name="name "   placeholder='Name'onChange={(e)=>{setName(e.target.value)}}/> */}
+
+
+  
+      
+       <input  type="Name" placeholder='Enter Name' onChange={(e)=>{setName(e.target.value)}} />
         <br>
         </br>
-        {/* <input type="text" placeholder='Surname'onChange={(e)=>{setSurname(e.target.value)}} /> */}
+        <input  type="Surname" placeholder='Enter Surname' onChange={(e)=>{setSurname(e.target.value)}} />
         <br>
         </br>
-        {/* <input type="email" placeholder='Email Address' onChange ={(e)=>{ setemail(e.target.value)}} /> */}
-        <br>
-        </br>
-        {/* <input type="Room" placeholder='Room Type' onChange={(e)=>{setRoom(e.target.value)}} /> */}
-        <br></br>
         <input  type="Amount" placeholder='Enter Amount' onChange={(e)=>{setAmount(e.target.value)}} />
         <br>
+      </br>
+        <input  type="hotelname" placeholder='Enter hotel Name' onChange={(e)=>{setHotelName(e.target.value)}} />
+        <br>
         </br>
-        <input type="numbers" placeholder='Enter number of guests' onChange={(e)=>{setNumbers(e.target.value)}} />
+        <input type="numbers" placeholder='Enter Number Of Guests' onChange={(e)=>{setNumbers(e.target.value)}} />
         <br>
         </br>
         <h3>Date & Time of arraival</h3>

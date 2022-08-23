@@ -131,7 +131,7 @@ const MainPage = ({ MainMenu }) => {
             
             </div>
             <Contact/>
-            {/* <p>click on Moreinfo to display hotel full info</p>  */}
+    
             {data.length === 0 ? (<>
           
             </>) : (
